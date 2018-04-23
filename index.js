@@ -20,6 +20,7 @@ app.use(session({
 }));
 
 app.post('/', (req, res) => {
+    console.log('INC REQUEST', JSON.stringify(req.body));
     return action[req.body.result.action](req, res);
 });
 
