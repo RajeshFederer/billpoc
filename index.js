@@ -13,15 +13,9 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(session({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: true
-}));
-
 
 app.post('/chatDialogflowAPI', function (req, res) {
+	console.log('I am In', req.body);
 	var options = {
 		method: 'POST',
 		url: 'https://api.api.ai/v1/query?v=20150910',
