@@ -14,15 +14,15 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.post('/chatDialogflowAPI', function (req, res) {
-	console.log('I am In', req.body);
+app.get('/chatDialogflowAPI', function (req, res) {
+	console.log('I am In', req.query);
 	var options = {
 		method: 'POST',
 		url: 'https://api.api.ai/v1/query?v=20150910',
 		headers: {
 			"Authorization": "Bearer aa3c4bf166e14cdbaa1d46d3a3fbe4b4"
 		},
-		body: req.body,
+		body: JSON.parse(req.query),
 		json: true
 	};
 	request(options, function (error, response, body) {
