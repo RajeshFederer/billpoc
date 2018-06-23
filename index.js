@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/chatDialogflowAPI', function (req, res) {
+app.post('/chatDialogflowAPI', function (req, res) {
 	console.log('I am In', req.query);
 	var options = {
 		method: 'POST',
