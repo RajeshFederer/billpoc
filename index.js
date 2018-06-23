@@ -20,7 +20,7 @@ app.get('/chatDialogflowAPI', function (req, res) {
 		method: 'POST',
 		url: 'https://api.api.ai/v1/query?v=20150910',
 		headers: {
-			"Authorization": "Bearer aa3c4bf166e14cdbaa1d46d3a3fbe4b4"
+			"Authorization": "Bearer 18bc30c20f82483d82559bb1b7506d27"
 		},
 		body: JSON.parse(req.query),
 		json: true
