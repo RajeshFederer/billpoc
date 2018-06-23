@@ -15,14 +15,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.post('/chatDialogflowAPI', function (req, res) {
-	console.log('I am In', req.query);
+	console.log('I am In', req.body);
 	var options = {
 		method: 'POST',
 		url: 'https://api.api.ai/v1/query?v=20150910',
 		headers: {
 			"Authorization": "Bearer 18bc30c20f82483d82559bb1b7506d27"
 		},
-		body: JSON.parse(req.query),
+		body: JSON.parse(req.body),
 		json: true
 	};
 	request(options, function (error, response, body) {
